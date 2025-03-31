@@ -19,6 +19,9 @@ const Navbar = (children, ...props) => {
             <li>
                 <NavLink className='nav-items' to='/Contact' href='/contact'>Contact</NavLink>
             </li>
+            <li>
+                <NavLink className='nav-items' to='/Admin' href='/admin'>Admin</NavLink>
+            </li>
             </ul>
             </div>
             <div className='hamburger-icon'>
