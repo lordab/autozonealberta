@@ -1,0 +1,53 @@
+{
+    "carDetails": [
+        {
+            "label": "Listing Title",
+            "name": "listingTitle",
+            "fieldtype": "text",
+            "required": "true"
+        },
+        {
+            "label": "Year",
+            "name": "year",
+            "fieldtype": "number",
+            "required": "true"
+        },
+        {
+            "label": "Make",
+            "name": "make",
+            "fieldtype": "text",
+            "required": "true"
+        },
+        {
+            "label": "Model",
+            "name": "model",
+            "fieldtype": "text",
+            "required": "true"
+        },
+        {
+            "label": "VIN",
+            "name": "vin",
+            "fieldtype": "text",
+            "required": "true"
+        },
+        {
+            "label": "VIN",
+            "name": "vin",
+            "fieldtype": "text",
+            "required": "true"
+        },
+        {
+            "label": "Price",
+            "name": "price",
+            "fieldtype": "number",
+            "required": "true"
+        },
+        {
+            "label": "Mileage",
+            "name": "mileage",
+            "fieldtype": "text",
+            "required": "true"
+        }
+
+    ]
+}
