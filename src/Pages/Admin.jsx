@@ -3,6 +3,7 @@ import { VStack, Text, Input, Grid, Button } from '@chakra-ui/react'
 import './Admin.css';
 import carDetails from '../Shared/carDetails.json'
 import InputField from '../components/ui/Input';
+import UploadImages from '../components/ui/UploadImages';
 
 export default function Admin() {
 const[formData, setFormData]=useState([]);
@@ -32,6 +33,7 @@ const onSubmit=(e)=>{
             )
             )}
         </Grid>
+        <UploadImages/>
         <Button type='submit' onClick={(e)=>onSubmit(e)} marginTop='32px' width='100px' size='lg' colorScheme='red'>Submit</Button>
       </form>
     </div>
