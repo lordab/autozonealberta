@@ -1,0 +1,13 @@
+.card-container {
+    width: 300px;
+    height: 350px;
+    background-color: '#fff';
+    border-color: '#D9D3D0';
+    border-width: '0.1px';
+    border-style: 'solid';
+    border-radius:'12px';
+}
+.card-item-label {
+    font-weight: 700;
+    font-size: 16px;
+}

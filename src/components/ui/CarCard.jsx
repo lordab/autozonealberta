@@ -1,38 +1,39 @@
 import React, { useEffect, useState } from "react";
-import { Box, Image, Text, Flex, Grid, VStack } from '@chakra-ui/react'
-import source from '../../images/IMG_1671.png'
-
+import { Box, Image, Text, Flex, Grid, VStack, Card, CardBody, Stack, Heading, Divider } from '@chakra-ui/react'
+import './CarCard.css'
 export default function CarCard ({cars}) {
  
   return(
     <div>
-      <Grid>
+      <Grid templateColumns='repeat(5, 1fr)' gap='6'>
       {cars?.map((item, index)=>(
-        <div key={index} style={{maxWidth: 300, height:350, backgroundColor: '#fff', borderColor: '#D9D3D0', borderWidth: '0.1px', borderStyle: 'solid', borderRadius:'0.1px'}} >
+        <Card key={index} size="lg" variant='outline' style={{maxHeight: '500px'}}>
+        <CardBody>
         <Image
         src={item?.images[0].imageUrl}
-        fit='contain'
-        htmlHeight='180px'
-        htmlWidth='300px'
+        fit='cover'
+        boxSize='300px'
+        //htmlHeight='180px'
+        //htmlWidth='300px'
+        //style={{borderRadius: '12px'}}
         />
-        <Flex>
-        <Text as='b' fontSize="1rem" padding="0.5rem">{item?.listingTitle}</Text>
-        </Flex>
-        <VStack>
+        <Stack mt='6' spacing='3'>
+          <Heading size='md'>{item?.listingTitle}</Heading>
         <div>
-        <label>Price: $</label>
-        <span>{item?.price}</span>
+        <label className='card-item-label'>Price: </label>
+        <span>${item?.price}</span>
         </div>
         <div>
-        <label>Mileage: </label>
+        <label className='card-item-label'>Mileage: </label>
         <span>{item?.mileage}km</span>
         </div>
         <div>
-        <label>VIN: </label>
+        <label className='card-item-label'>VIN: </label>
         <span>{item?.vin}</span>
         </div>
-        </VStack>
-      </div>
+        </Stack>
+        </CardBody>
+      </Card>
       
       ))
     }
