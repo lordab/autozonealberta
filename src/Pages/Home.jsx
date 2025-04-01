@@ -1,3 +1,4 @@
+"use server"
 import React, { useEffect, useState } from 'react'
 import CarCard from '../components/ui/CarCard'
 import { db } from '../../configs/index'

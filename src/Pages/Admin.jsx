@@ -1,3 +1,4 @@
+"use server"
 import React, { useState } from 'react'
 import { VStack, Text, Input, Grid, Button } from '@chakra-ui/react'
 import './Admin.css';

@@ -1,3 +1,4 @@
+"use server"
 import { Grid, Button } from '@chakra-ui/react'
 import { storage } from '../../../configs/firebaseConfig';
 import React, { useEffect, useState } from 'react'
