@@ -31,12 +31,6 @@
             "required": "true"
         },
         {
-            "label": "VIN",
-            "name": "vin",
-            "fieldtype": "text",
-            "required": "true"
-        },
-        {
             "label": "Price",
             "name": "price",
             "fieldtype": "number",

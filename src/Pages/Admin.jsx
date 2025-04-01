@@ -4,11 +4,16 @@ import './Admin.css';
 import carDetails from '../Shared/carDetails.json'
 import InputField from '../components/ui/Input';
 import UploadImages from '../components/ui/UploadImages';
+import { CarListing } from '../../configs/schema';
+import {db} from '../../configs/index'
+
 
 export default function Admin() {
-const[formData, setFormData]=useState([]);
+const[formData, setFormData] = useState([]);
+const [triggerUploadImages, setTriggerUploadImages]= useState([]);
+const [loader, setLoader] =useState(false);
 
-const handleInputChange=(name, value)=>{
+const handleInputChange = (name, value)=>{
 setFormData((prevData)=>({
     ...prevData,
     [name]: value
@@ -16,9 +21,24 @@ setFormData((prevData)=>({
 
 }
 
-const onSubmit=(e)=>{
+const onSubmit = async(e) => {
+    
     e.preventDefault();
-    console.log(formData);
+    console.log('FormData', formData);
+
+    try{
+        setLoader(true);
+        const result = await db.insert(CarListing).values({
+            ...formData,
+        }).returning({id: CarListing.id})
+        if (result) {
+            console.log("DATA SAVED", result)
+            setTriggerUploadImages(result[0]?.id);
+            setLoader(false);
+        }
+    }catch (e) {
+        console.log("Error", e)
+    }
 }
   return (
     <div className='admin-container'>
@@ -33,8 +53,17 @@ const onSubmit=(e)=>{
             )
             )}
         </Grid>
-        <UploadImages/>
-        <Button type='submit' onClick={(e)=>onSubmit(e)} marginTop='32px' width='100px' size='lg' colorScheme='red'>Submit</Button>
+        <UploadImages triggerUploadImages={triggerUploadImages} setLoader={(value)=>setLoader(value)}/>
+        <Button 
+        type='submit'
+        isLoading={!loader}
+        onClick={(e)=>onSubmit(e)}
+        marginTop='32px'
+        width='100px'
+        size='lg'
+        colorScheme='red'>
+        Submit
+        </Button>
       </form>
     </div>
   )
