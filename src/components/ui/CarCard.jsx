@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Image, Text, Flex, Grid } from '@chakra-ui/react'
+import { Box, Image, Text, Flex, Grid, VStack } from '@chakra-ui/react'
 import source from '../../images/IMG_1671.png'
 
 export default function CarCard ({cars}) {
@@ -18,6 +18,20 @@ export default function CarCard ({cars}) {
         <Flex>
         <Text as='b' fontSize="1rem" padding="0.5rem">{item?.listingTitle}</Text>
         </Flex>
+        <VStack>
+        <div>
+        <label>Price: $</label>
+        <span>{item?.price}</span>
+        </div>
+        <div>
+        <label>Mileage: </label>
+        <span>{item?.mileage}km</span>
+        </div>
+        <div>
+        <label>VIN: </label>
+        <span>{item?.vin}</span>
+        </div>
+        </VStack>
       </div>
       
       ))
