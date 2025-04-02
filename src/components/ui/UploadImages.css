@@ -1,0 +1,13 @@
+.upload-image-container-icon {
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    border-width: 0.1px;
+    background: #ADD8E6;
+    padding: 12px;
+    border-style: dotted;
+    width: 10%;
+    height: 100%;
+    align-items: center;
+    margin-left: 10px;
+}

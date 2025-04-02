@@ -2,19 +2,20 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(176, 82, 82);
-    color: #fff;
+    background-color: #C47E3B;
     padding: 1rem;
     box-sizing: border-box;
     box-shadow: '';
-    border-radius: 0.1rem;
     position: sticky;
     top: 0;
+    border-color: darkgrey;
+    border-bottom-width: 0.01rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .heading {
-    font-size: 1.2rem sans-serif;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #eedddd;
+    color: #fff;
     text-decoration: none;
     cursor: pointer;
 }
@@ -28,7 +29,7 @@ nav {
 }
 
 .nav-items {
-    color: #fff;
+    color: #4c4848;
     font-size: 1.1rem;
 }
 

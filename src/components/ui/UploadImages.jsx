@@ -3,9 +3,11 @@ import { Grid, Button } from '@chakra-ui/react'
 import { storage } from '../../../configs/firebaseConfig';
 import React, { useEffect, useState } from 'react'
 import { IoCloseCircle } from "react-icons/io5";
+import { IoMdAdd } from "react-icons/io";
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { CarImages, CarListing } from '../../../configs/schema';
-import { db } from '../../../configs/index'
+import { db } from '../../../configs/index';
+import './UploadImages.css';
 
 function UploadImages({triggerUploadImages}) {
 
@@ -68,7 +70,9 @@ function UploadImages({triggerUploadImages}) {
           </div>
         ))}
         <label htmlFor='upload-images'>
-            <div style={{display: 'flex', justifyContent: 'center', borderRadius: '12px', borderWidth: '0.1px', background: '#ADD8E6', padding:'10px', borderStyle: 'dotted', width: '100%', height: '140px'}}><h2 style={{justifyContent: 'center', marginTop:'12%'}}>+</h2></div>
+            <div className='upload-image-container-icon'>
+              <IoMdAdd />
+            </div>
         </label>
         <input type='file' multiple={true} id='upload-images' style={{opacity:0}} onChange={onFileSelected}/>
         <div className='flex flex-col items-center justify-center'></div>

@@ -54,7 +54,9 @@ const onSubmit = async(data) => {
         marginTop='32px'
         width='100px'
         size='lg'
-        colorScheme='red'>
+        backgroundColor='#C47E3B'
+        color='#fff'
+        >
         Submit
         </Button>
       </form>
