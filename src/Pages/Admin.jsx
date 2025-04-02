@@ -21,7 +21,10 @@ setFormData((prevData)=>({
 }))
 
 }
-
+ const resetForm = ()=>{
+    console.log('setform')
+    setFormData([])
+ }
 const onSubmit = async(e) => {
     
     e.preventDefault();
@@ -36,6 +39,7 @@ const onSubmit = async(e) => {
             console.log("DATA SAVED", result)
             setTriggerUploadImages(result[0]?.id);
             setLoader(false);
+            console.log('reset');
         }
     }catch (e) {
         console.log("Error", e)
@@ -44,7 +48,7 @@ const onSubmit = async(e) => {
   return (
     <div className='admin-container'>
       <div className='add-listing-heading'>Add New Listing</div>
-      <form>
+      <form id='car-detail-form'>
         <Grid templateColumns="repeat(2, 1fr)" gap="6">
             {carDetails.carDetails.map((item, index)=>(
                 <div key={index}>
@@ -54,10 +58,10 @@ const onSubmit = async(e) => {
             )
             )}
         </Grid>
-        <UploadImages triggerUploadImages={triggerUploadImages} setLoader={(value)=>setLoader(value)}/>
+        <UploadImages triggerUploadImages={triggerUploadImages} setLoader={resetForm}/>
         <Button 
         type='submit'
-        isLoading={!loader}
+        isLoading={loader}
         onClick={(e)=>onSubmit(e)}
         marginTop='32px'
         width='100px'

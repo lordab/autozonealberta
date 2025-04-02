@@ -24,9 +24,6 @@ function UploadImages({triggerUploadImages, setLoader}) {
   
   const onFileSelected=(event)=>{
     const files = event.target.files;
-    console.log(
-      'Files', files
-    )
     for(let i=0; i< files?.length; i++){
       const file= files[i];
       setSelectedFileList((prev)=>[...prev,file])
@@ -34,7 +31,7 @@ function UploadImages({triggerUploadImages, setLoader}) {
   }
 
   const UploadImagesToServer=async()=>{
-    setLoader(true);
+    // setLoader(true);
     selectedFileList.forEach(async(file)=>{
       const fileName=Date.now()+'.jpeg';
       const storageRef=ref(storage, 'car-listing/'+fileName);
@@ -51,7 +48,7 @@ function UploadImages({triggerUploadImages, setLoader}) {
               imageUrl: downloadUrl,
               carListingId: triggerUploadImages
             })
-            setLoader(false);
+          setLoader();
           }
         })
         

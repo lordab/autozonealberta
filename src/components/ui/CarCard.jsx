@@ -4,8 +4,8 @@ import './CarCard.css'
 export default function CarCard ({cars}) {
  
   return(
-    <div>
-      <SimpleGrid  columns={4} spacing={6} minChildWidth='250px'>
+    <div style={{justifyContent: 'center', padding: '100px'}}>
+      <SimpleGrid  columns={3} spacing={8} minChildWidth='250px'>
       {cars?.map((item, index)=>(
         <Card key={index} size="lg" variant='outline' style={{maxHeight: '500px'}}>
         <CardBody>
