@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Box, Image, Text, Flex, Grid, VStack, Card, CardBody, Stack, Heading, Divider } from '@chakra-ui/react'
+import { Box, Image, Text, Flex, Grid, VStack, Card, CardBody, Stack, Heading, Divider, SimpleGrid } from '@chakra-ui/react'
 import './CarCard.css'
 export default function CarCard ({cars}) {
  
   return(
     <div>
-      <Grid templateColumns='repeat(5, 1fr)' gap='6'>
+      <SimpleGrid  columns={4} spacing={6} minChildWidth='250px'>
       {cars?.map((item, index)=>(
         <Card key={index} size="lg" variant='outline' style={{maxHeight: '500px'}}>
         <CardBody>
@@ -37,7 +37,7 @@ export default function CarCard ({cars}) {
       
       ))
     }
-      </Grid>
+      </SimpleGrid>
     </div>
     
 )
