@@ -5,7 +5,6 @@ function InputField({item, handleInputChange}) {
         <div>
             <Input 
             name={item?.name}
-            type={item?.fieldType}
             onChange={(e)=>handleInputChange(item.name, e.target.value)}
             />
         </div>

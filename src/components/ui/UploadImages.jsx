@@ -7,7 +7,7 @@ import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { CarImages, CarListing } from '../../../configs/schema';
 import { db } from '../../../configs/index'
 
-function UploadImages({triggerUploadImages, setLoader}) {
+function UploadImages({triggerUploadImages}) {
 
   const [selectedFileList, setSelectedFileList] =useState([]);
   
@@ -48,7 +48,7 @@ function UploadImages({triggerUploadImages, setLoader}) {
               imageUrl: downloadUrl,
               carListingId: triggerUploadImages
             })
-          setLoader();
+          //setLoader();
           }
         })
         
