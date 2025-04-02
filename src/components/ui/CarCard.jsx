@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Image, Text, Flex, Grid, VStack, Card, CardBody, Stack, Heading, Divider, SimpleGrid } from '@chakra-ui/react'
+import { Box, Image, Text, Flex, Grid, VStack, Card, CardBody, Stack, Heading, Divider, SimpleGrid, Button } from '@chakra-ui/react'
 import './CarCard.css'
 export default function CarCard ({cars}) {
  
@@ -7,17 +7,18 @@ export default function CarCard ({cars}) {
     <div style={{justifyContent: 'center', padding: '100px'}}>
       <SimpleGrid  columns={3} spacing={8} minChildWidth='250px'>
       {cars?.map((item, index)=>(
-        <Card key={index} size="lg" variant='outline' style={{maxHeight: '500px'}}>
+        <Card key={index} size="lg" variant='outline' style={{borderColor:'darkgrey'}}>
         <CardBody>
-        <Image
+          <img src={item?.images[0].imageUrl} />
+        {/* <Image
         src={item?.images[0].imageUrl}
-        fit='cover'
-        boxSize='300px'
+        objectFit='cover'
+        boxSize='500px'
         //htmlHeight='180px'
-        //htmlWidth='300px'
+        htmlWidth='400px'
         //style={{borderRadius: '12px'}}
-        />
-        <Stack mt='6' spacing='3'>
+        /> */}
+        <Stack mt='5' spacing='3'>
           <Heading size='md'>{item?.listingTitle}</Heading>
         <div>
         <label className='card-item-label'>Price: </label>
@@ -30,6 +31,9 @@ export default function CarCard ({cars}) {
         <div>
         <label className='card-item-label'>VIN: </label>
         <span>{item?.vin}</span>
+        </div>
+        <div>
+          <Button style={{backgroundColor: '#fff', color: '#C47E3B', borderColor: 'darkgrey'}}>View Details</Button>
         </div>
         </Stack>
         </CardBody>
