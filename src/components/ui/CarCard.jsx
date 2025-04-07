@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Box, Image, Text, Flex, Grid, VStack, Card, CardBody, Stack, Heading, Divider, SimpleGrid, Button } from '@chakra-ui/react'
+import { Box, Image, Text, Flex, Grid, VStack, Card, CardBody, Stack, Heading, Divider, SimpleGrid, Button, Container } from '@chakra-ui/react'
 import './CarCard.css'
 export default function CarCard ({cars}) {
  
   return(
-    <div style={{justifyContent: 'center', padding: '100px'}}>
-      <SimpleGrid  columns={3} spacing={8} minChildWidth='250px'>
+    <Box borderWidth={1} borderRadius='lg' w='100%' p='6'>
+      <SimpleGrid  columns={3} spacing={8} minChildWidth='250px' style={{padding: '22px'}}>
       {cars?.map((item, index)=>(
         <Card key={index} size="lg" variant='outline' style={{borderColor:'darkgrey'}}>
         <CardBody>
@@ -42,7 +42,7 @@ export default function CarCard ({cars}) {
       ))
     }
       </SimpleGrid>
-    </div>
+    </Box>
     
 )
 }
